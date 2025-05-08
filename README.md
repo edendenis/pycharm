@@ -1,18 +1,12 @@
-# Como configurar/instalar o `PyCharm` no Linux Ubuntu
+# Como configurar/instalar o `PyCharm` no `Linux Ubuntu`
 
 ## Resumo
 
-Neste documento estão contidos os principais comandos e configurações para configurar/instalar o `PyCharm` no Linux Ubuntu.
+Neste documento estão contidos os principais comandos e configurações para configurar/instalar o `PyCharm` no `Linux Ubuntu`.
 
 ## _Abstract_
 
-_In this document are contained the main commands and settings to set up/install the `PyCharm` on Linux Ubuntu._
-
-## Revisão(ões)/Versão(ões)
-
-|Revisão número|Data da revisão|Descrição da revisão|Autor da revisão|
-|:-:|:-:|:-|:-|
-|0|21/11/2023|<ul><li>Revisão inicial/criação do documento.</li></ul>|Eden Denis F. da S. L. Santos|
+_In this document are contained the main commands and settings to set up/install the `PyCharm` on `Linux Ubuntu`._
 
 ## Descrição [2]
 
@@ -24,15 +18,27 @@ O PyCharm é um ambiente de desenvolvimento integrado (IDE) altamente conceituad
 
 Para instalar e configurar um servidor SSH no Ubuntu, você pode seguir estas etapas:
 
-1. Abra o terminal. Você pode fazer isso pressionando: `Ctrl + Alt + T`
+1. Abra o `Terminal Emulator`. Você pode fazer isso pressionando: `Ctrl + Alt + T`
 
-2. Certifique-se de que seu sistema esteja atualizado.
 
-    2.1 Buscar as atualizações disponíveis para os pacotes que estão instalados em seu sistema. Digite o seguinte comando e pressione `Enter`: `sudo apt update -y`
+2. Certifique-se de que seu sistema esteja limpo e atualizado.
 
-    2.2 Para ver a lista de pacotes a serem atualizados, digite o seguinte comando e pressione `Enter`:  `sudo apt list --upgradable`
+    2.1 Limpar o `cache` do gerenciador de pacotes `apt`. Especificamente, ele remove todos os arquivos de pacotes (`.deb`) baixados pelo `apt` e armazenados em `/var/cache/apt/archives/`. Digite o seguinte comando: `sudo apt clean` 
+    
+    2.2 Remover pacotes `.deb` antigos ou duplicados do cache local. É útil para liberar espaço, pois remove apenas os pacotes que não podem mais ser baixados (ou seja, versões antigas de pacotes que foram atualizados). Digite o seguinte comando: `sudo apt autoclean`
 
-    2.3 Realmente atualizar os pacotes instalados para as suas versões mais recentes, com base na última vez que você executou `sudo apt update -y`. Digite o seguinte comando e pressione `Enter`: `sudo apt full-upgrade -y`
+    2.3 Remover pacotes que foram automaticamente instalados para satisfazer as dependências de outros pacotes e que não são mais necessários. Digite o seguinte comando: `sudo apt autoremove -y`
+
+    2.4 Buscar as atualizações disponíveis para os pacotes que estão instalados em seu sistema. Digite o seguinte comando e pressione `Enter`: `sudo apt update`
+
+    2.5 **Corrigir pacotes quebrados**: Isso atualizará a lista de pacotes disponíveis e tentará corrigir pacotes quebrados ou com dependências ausentes: `sudo apt --fix-broken install`
+
+    2.6 Limpar o `cache` do gerenciador de pacotes `apt`. Especificamente, ele remove todos os arquivos de pacotes (`.deb`) baixados pelo `apt` e armazenados em `/var/cache/apt/archives/`. Digite o seguinte comando: `sudo apt clean` 
+    
+    2.7 Para ver a lista de pacotes a serem atualizados, digite o seguinte comando e pressione `Enter`:  `sudo apt list --upgradable`
+
+    2.8 Realmente atualizar os pacotes instalados para as suas versões mais recentes, com base na última vez que você executou `sudo apt update`. Digite o seguinte comando e pressione `Enter`: `sudo apt full-upgrade -y`
+    
 
 3. **Instale o Snap (caso ainda não esteja instalado):** O PyCharm pode ser instalado usando o Snap, que é um sistema de empacotamento de aplicativos. Se o Snap não estiver instalado no seu sistema, você pode instalá-lo com o seguinte comando: `sudo apt install snapd -y`
 
@@ -57,7 +63,7 @@ Agora você tem o PyCharm instalado no seu sistema Ubuntu e pode começar a dese
 
 Para instalar o `PyCharm` no Linux Ubuntu sem precisar digitar linha por linha, você pode seguir estas etapas:
 
-1. Abra o terminal. Você pode fazer isso pressionando: `Ctrl + Alt + T`
+1. Abra o `Terminal Emulator`. Você pode fazer isso pressionando: `Ctrl + Alt + T`
 
 2. Digite o seguinte comando e pressione `Enter`:
 
